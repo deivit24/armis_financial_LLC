@@ -1,0 +1,310 @@
+$ubuntu: 'Ubuntu', sans-serif;
+$lato: 'Lato', sans-serif;
+$raleway: 'Raleway', sans-serif;
+
+@mixin mediaSm {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+// Colors
+$gold: #d89e04;
+
+#Nav {
+  transition: all 1s;
+  .navbar-nav {
+    padding: 15px 0px;
+    .nav-item {
+      margin: 5px;
+      .nav-link {
+        color: #dadada;
+        font-family: $lato;
+        font-size: 1.2rem;
+        position: relative;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: #fff;
+
+          &::after,
+          &::before {
+            width: 100%;
+            left: 0;
+          }
+        }
+
+        &::after,
+        &::before {
+          content: '';
+          position: absolute;
+          top: calc(100% + 5px);
+          width: 0;
+          right: 0;
+          height: 3px;
+        }
+
+        &::before {
+          transition: width 0.4s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
+          background: #333;
+        }
+
+        &::after {
+          transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+          background: $gold;
+        }
+        .active {
+          color: red !important;
+        }
+      }
+    }
+    #ClientLoginBtn {
+      color: #333;
+      text-decoration: none;
+      background: $gold;
+      transition: all 0.2s ease-in-out;
+      border: 1px solid black;
+      border-radius: 20px;
+      font-family: $lato;
+      font-size: 1.2rem;
+      position: relative;
+      padding: 10px 10px;
+
+      &:hover {
+        background: #fff;
+        color: black;
+        border: 1px solid black;
+      }
+    }
+  }
+}
+.light {
+  background: white;
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: #333 !important;
+      }
+      .active {
+        color: $gold !important;
+        font-weight: 700;
+      }
+    }
+    #ClientLoginBtn {
+      color: #333;
+      text-decoration: none;
+      background: #fff !important;
+      border: 1px solid black;
+
+      &:hover {
+        background: $gold !important;
+
+        border: 1px solid black;
+      }
+    }
+  }
+}
+
+.Cover-Page {
+  width: 100%;
+  height: 100vh;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.76)),
+    url(../img/austin.jpg);
+  background-size: cover;
+  background-position: center;
+  display: table;
+
+  .middle {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    h2 {
+      margin-top: 25px;
+      color: white;
+      font-family: $ubuntu;
+      font-size: 2.5rem;
+      span {
+        color: $gold;
+      }
+    }
+
+    .learnBtn {
+      color: white;
+      font-family: $ubuntu;
+      border: 2px solid white;
+      margin-top: 50px;
+      padding: 10px 15px;
+      transition: all ease-in-out 0.5s;
+      &:hover {
+        background: white;
+        color: black;
+        font-weight: bold;
+      }
+    }
+  }
+  #Logo {
+    color: white;
+
+    font-family: $ubuntu;
+    font-weight: 700;
+  }
+}
+
+.neon {
+  color: $gold;
+  font-size: 5rem;
+  text-shadow: 0 0 3vw $gold;
+}
+
+.flux {
+  color: white;
+  font-size: 5rem;
+  text-shadow: 0 0 3vw white;
+}
+
+.neon {
+  animation: neon 2s ease infinite;
+  -moz-animation: neon 2s ease infinite;
+  -webkit-animation: neon 2s ease infinite;
+  -o-animation: neon 2s linear infinite;
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw $gold, 0 0 3vw $gold, 0 0 10vw $gold, 0 0 10vw $gold,
+      0 0 0.4vw #fed128, 0.5vw 0.5vw 0.1vw #806914;
+    color: #fed128;
+  }
+  50% {
+    text-shadow: 0 0 0.5vw darken($color: $gold, $amount: 30),
+      0 0 1.5vw darken($color: $gold, $amount: 30),
+      0 0 5vw darken($color: $gold, $amount: 30),
+      0 0 5vw darken($color: $gold, $amount: 30),
+      0 0 0.2vw darken($color: $gold, $amount: 30), 0.5vw 0.5vw 0.1vw #40340a;
+    color: #806914;
+  }
+}
+
+.flux {
+  animation: flux 1s linear infinite;
+  -moz-animation: flux 1s linear infinite;
+  -webkit-animation: flux 1s linear infinite;
+  -o-animation: flux 1s linear infinite;
+}
+
+@keyframes flux {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #e4e4e4, 0 0 3vw #e4e4e4, 0 0 10vw #e4e4e4,
+      0 0 10vw #e4e4e4, 0 0 0.4vw #555, 0.5vw 0.5vw 0.1vw #333;
+    color: #eeeeee;
+  }
+  50% {
+    text-shadow: 0 0 0.5vw #666, 0 0 1.5vw #666, 0 0 5vw #666, 0 0 5vw #666,
+      0 0 0.2vw #666, 0.5vw 0.5vw 0.1vw #333;
+    color: white;
+  }
+}
+#sec1 {
+  width: 100%;
+  .container {
+    .row {
+      padding: 50px 0px;
+      .col-md-6 {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img {
+          width: 100%;
+        }
+        p {
+          font-family: $lato;
+          font-size: 2rem;
+          text-align: center;
+          padding: 0px 10px;
+          span {
+            color: $gold;
+            font-weight: bold;
+          }
+        }
+        .btn {
+          color: black;
+          width: 200px;
+
+          font-family: $ubuntu;
+          border: 2px solid black;
+          margin: 0px auto 0px auto;
+          padding: 10px 15px;
+          transition: all ease-in-out 0.3s;
+          &:hover {
+            background: $gold;
+            color: black;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  @include mediaSm {
+    p {
+      margin: 50px;
+      font-size: 1.5rem !important;
+    }
+  }
+}
+#SocialMedia {
+  height: 300px;
+  background: #333;
+  border-top: 2px solid $gold;
+  border-bottom: 2px solid $gold;
+
+  .row {
+    margin: 50px auto 30px auto;
+    justify-content: center;
+
+    .col-xs-3 {
+      text-align: center;
+      justify-content: center;
+
+      a {
+        font-size: 50px;
+        padding: 15px;
+        text-align: center;
+        color: white;
+        transition: 1s;
+
+        &:hover {
+          cursor: pointer;
+          font-size: 60px;
+          transition: 1s;
+          color: #3b5998;
+        }
+      }
+    }
+  }
+
+  p {
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+footer {
+  text-align: center;
+  padding-top: 50px;
+
+  .col-sm-3 {
+    a {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}

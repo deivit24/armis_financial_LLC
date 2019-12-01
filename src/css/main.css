@@ -1,0 +1,210 @@
+#Nav {
+  transition: all 1s; }
+  #Nav .navbar-nav {
+    padding: 15px 0px; }
+    #Nav .navbar-nav .nav-item {
+      margin: 5px; }
+      #Nav .navbar-nav .nav-item .nav-link {
+        color: #dadada;
+        font-family: "Lato", sans-serif;
+        font-size: 1.2rem;
+        position: relative;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out; }
+        #Nav .navbar-nav .nav-item .nav-link:hover {
+          color: #fff; }
+          #Nav .navbar-nav .nav-item .nav-link:hover::after, #Nav .navbar-nav .nav-item .nav-link:hover::before {
+            width: 100%;
+            left: 0; }
+        #Nav .navbar-nav .nav-item .nav-link::after, #Nav .navbar-nav .nav-item .nav-link::before {
+          content: '';
+          position: absolute;
+          top: calc(100% + 5px);
+          width: 0;
+          right: 0;
+          height: 3px; }
+        #Nav .navbar-nav .nav-item .nav-link::before {
+          transition: width 0.4s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
+          background: #333; }
+        #Nav .navbar-nav .nav-item .nav-link::after {
+          transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+          background: #d89e04; }
+        #Nav .navbar-nav .nav-item .nav-link .active {
+          color: red !important; }
+    #Nav .navbar-nav #ClientLoginBtn {
+      color: #333;
+      text-decoration: none;
+      background: #d89e04;
+      transition: all 0.2s ease-in-out;
+      border: 1px solid black;
+      border-radius: 20px;
+      font-family: "Lato", sans-serif;
+      font-size: 1.2rem;
+      position: relative;
+      padding: 10px 10px; }
+      #Nav .navbar-nav #ClientLoginBtn:hover {
+        background: #fff;
+        color: black;
+        border: 1px solid black; }
+
+.light {
+  background: white; }
+  .light .navbar-nav .nav-item .nav-link {
+    color: #333 !important; }
+  .light .navbar-nav .nav-item .active {
+    color: #d89e04 !important;
+    font-weight: 700; }
+  .light .navbar-nav #ClientLoginBtn {
+    color: #333;
+    text-decoration: none;
+    background: #fff !important;
+    border: 1px solid black; }
+    .light .navbar-nav #ClientLoginBtn:hover {
+      background: #d89e04 !important;
+      border: 1px solid black; }
+
+.Cover-Page {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.76)), url(../img/austin.jpg);
+  background-size: cover;
+  background-position: center;
+  display: table; }
+  .Cover-Page .middle {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle; }
+    .Cover-Page .middle h2 {
+      margin-top: 25px;
+      color: white;
+      font-family: "Ubuntu", sans-serif;
+      font-size: 2.5rem; }
+      .Cover-Page .middle h2 span {
+        color: #d89e04; }
+    .Cover-Page .middle .learnBtn {
+      color: white;
+      font-family: "Ubuntu", sans-serif;
+      border: 2px solid white;
+      margin-top: 50px;
+      padding: 10px 15px;
+      transition: all ease-in-out 0.5s; }
+      .Cover-Page .middle .learnBtn:hover {
+        background: white;
+        color: black;
+        font-weight: bold; }
+  .Cover-Page #Logo {
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700; }
+
+.neon {
+  color: #d89e04;
+  font-size: 5rem;
+  text-shadow: 0 0 3vw #d89e04; }
+
+.flux {
+  color: white;
+  font-size: 5rem;
+  text-shadow: 0 0 3vw white; }
+
+.neon {
+  animation: neon 2s ease infinite;
+  -moz-animation: neon 2s ease infinite;
+  -webkit-animation: neon 2s ease infinite;
+  -o-animation: neon 2s linear infinite; }
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #d89e04, 0 0 3vw #d89e04, 0 0 10vw #d89e04, 0 0 10vw #d89e04, 0 0 0.4vw #fed128, 0.5vw 0.5vw 0.1vw #806914;
+    color: #fed128; }
+  50% {
+    text-shadow: 0 0 0.5vw #423001, 0 0 1.5vw #423001, 0 0 5vw #423001, 0 0 5vw #423001, 0 0 0.2vw #423001, 0.5vw 0.5vw 0.1vw #40340a;
+    color: #806914; } }
+
+.flux {
+  animation: flux 1s linear infinite;
+  -moz-animation: flux 1s linear infinite;
+  -webkit-animation: flux 1s linear infinite;
+  -o-animation: flux 1s linear infinite; }
+
+@keyframes flux {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #e4e4e4, 0 0 3vw #e4e4e4, 0 0 10vw #e4e4e4, 0 0 10vw #e4e4e4, 0 0 0.4vw #555, 0.5vw 0.5vw 0.1vw #333;
+    color: #eeeeee; }
+  50% {
+    text-shadow: 0 0 0.5vw #666, 0 0 1.5vw #666, 0 0 5vw #666, 0 0 5vw #666, 0 0 0.2vw #666, 0.5vw 0.5vw 0.1vw #333;
+    color: white; } }
+
+#sec1 {
+  width: 100%; }
+  #sec1 .container .row {
+    padding: 50px 0px; }
+    #sec1 .container .row .col-md-6 {
+      padding: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      #sec1 .container .row .col-md-6 img {
+        width: 100%; }
+      #sec1 .container .row .col-md-6 p {
+        font-family: "Lato", sans-serif;
+        font-size: 2rem;
+        text-align: center;
+        padding: 0px 10px; }
+        #sec1 .container .row .col-md-6 p span {
+          color: #d89e04;
+          font-weight: bold; }
+      #sec1 .container .row .col-md-6 .btn {
+        color: black;
+        width: 200px;
+        font-family: "Ubuntu", sans-serif;
+        border: 2px solid black;
+        margin: 0px auto 0px auto;
+        padding: 10px 15px;
+        transition: all ease-in-out 0.3s; }
+        #sec1 .container .row .col-md-6 .btn:hover {
+          background: #d89e04;
+          color: black;
+          font-weight: bold; }
+  @media screen and (max-width: 767px) {
+    #sec1 p {
+      margin: 50px;
+      font-size: 1.5rem !important; } }
+
+#SocialMedia {
+  height: 300px;
+  background: #333;
+  border-top: 2px solid #d89e04;
+  border-bottom: 2px solid #d89e04; }
+  #SocialMedia .row {
+    margin: 50px auto 30px auto;
+    justify-content: center; }
+    #SocialMedia .row .col-xs-3 {
+      text-align: center;
+      justify-content: center; }
+      #SocialMedia .row .col-xs-3 a {
+        font-size: 50px;
+        padding: 15px;
+        text-align: center;
+        color: white;
+        transition: 1s; }
+        #SocialMedia .row .col-xs-3 a:hover {
+          cursor: pointer;
+          font-size: 60px;
+          transition: 1s;
+          color: #3b5998; }
+  #SocialMedia p {
+    color: white;
+    text-align: center;
+    font-size: 1.2rem; }
+
+footer {
+  text-align: center;
+  padding-top: 50px; }
+  footer .col-sm-3 a {
+    text-decoration: none;
+    color: black; }
+    footer .col-sm-3 a:hover {
+      font-weight: bold; }
