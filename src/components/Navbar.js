@@ -48,6 +48,7 @@ class NavBar extends React.Component {
       }
       this.setState({ activeClass });
     });
+    console.log('component did mount');
   }
   render() {
     // let navLink = document.querySelector('#AboutPage');

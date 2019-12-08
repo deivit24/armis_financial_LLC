@@ -72,6 +72,12 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
+          <div className="container-fluid">
+            <h1>Fees That Make Sense</h1>
+            <a href="/fees" className="btn">
+              Learn More
+            </a>
+          </div>
         </div>
       </div>
     );

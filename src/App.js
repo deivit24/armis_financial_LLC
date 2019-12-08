@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import NavBar from '../src/components/Navbar';
 import Home from '../src/components/Home';
 import About from '../src/components/About';
+
 import Fee from '../src/components/Fee';
 import Services from '../src/components/Services';
 import Philosophy from '../src/components/Philosophy';
@@ -22,6 +23,7 @@ class App extends React.Component {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
+
           <Route path="/fee" exact component={Fee} />
           <Route path="/services" exact component={Services} />
           <Route path="/philosophy" exact component={Philosophy} />

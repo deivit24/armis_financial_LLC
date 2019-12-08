@@ -168,10 +168,147 @@
           background: #d89e04;
           color: black;
           font-weight: bold; }
+  #sec1 .container-fluid {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/fees.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top: 2px solid #d89e04;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    #sec1 .container-fluid h1 {
+      font-family: "Ubuntu", sans-serif;
+      color: white;
+      text-align: center; }
+    #sec1 .container-fluid .btn {
+      color: white;
+      width: 200px;
+      font-family: "Ubuntu", sans-serif;
+      border: 2px solid white;
+      margin: 0px auto 0px auto;
+      padding: 10px 15px;
+      transition: all ease-in-out 0.3s; }
+      #sec1 .container-fluid .btn:hover {
+        background: white;
+        color: black;
+        font-weight: bold; }
   @media screen and (max-width: 767px) {
     #sec1 p {
       margin: 50px;
       font-size: 1.5rem !important; } }
+
+@media screen and (max-width: 767px) {
+  #About h1 {
+    font-size: 2rem; }
+  #About h2 {
+    font-size: 1.2rem; } }
+
+#About .container {
+  padding: 0px;
+  margin-top: 120px;
+  text-align: center;
+  transition: all 1s ease-in-out; }
+  #About .container h1,
+  #About .container h2 {
+    transition: all 1s ease-in-out;
+    font-family: "Ubuntu", sans-serif; }
+  #About .container img {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 0px; }
+  @media screen and (max-width: 767px) {
+    #About .container h1 {
+      font-size: 1.3rem; }
+    #About .container h2 {
+      font-size: 1.2rem; } }
+  #About .container .nav {
+    position: fixed;
+    background: white;
+    overflow: visible;
+    width: 100%;
+    top: 85px;
+    left: 0;
+    z-index: 200; }
+    #About .container .nav .nav-item .nav-link {
+      text-decoration: none;
+      color: #333;
+      font-family: "Raleway", sans-serif;
+      font-size: 1.2rem;
+      position: relative;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out; }
+      #About .container .nav .nav-item .nav-link:hover {
+        color: #000;
+        font-weight: bold; }
+        #About .container .nav .nav-item .nav-link:hover::after, #About .container .nav .nav-item .nav-link:hover::before {
+          width: 100%;
+          left: 0; }
+      #About .container .nav .nav-item .nav-link::after, #About .container .nav .nav-item .nav-link::before {
+        content: '';
+        position: absolute;
+        top: calc(100% + 5px);
+        width: 0;
+        right: 0;
+        height: 3px; }
+      #About .container .nav .nav-item .nav-link::before {
+        transition: width 0.4s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
+        background: #333; }
+      #About .container .nav .nav-item .nav-link::after {
+        transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+        background: #d89e04; }
+    #About .container .nav .nav-item .active {
+      font-weight: bold;
+      color: black; }
+    @media screen and (max-width: 767px) {
+      #About .container .nav {
+        top: 80px; } }
+
+#myTabContent {
+  margin-top: 0px !important; }
+  #myTabContent .container-fluid {
+    padding: 0; }
+    #myTabContent .container-fluid .showtron {
+      height: 400px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/360.jpg);
+      background-position: center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Ubuntu", sans-serif; }
+      #myTabContent .container-fluid .showtron h1 {
+        color: white;
+        text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+        font-size: 3rem; }
+      #myTabContent .container-fluid .showtron h2 {
+        color: white;
+        text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+        font-size: 2.5rem; }
+    #myTabContent .container-fluid .advisor {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/bike.jpg);
+      background-position: bottom center; }
+    #myTabContent .container-fluid .container {
+      margin-top: 0px !important; }
+      #myTabContent .container-fluid .container h1 {
+        text-align: center;
+        padding: 20px 10px; }
+      #myTabContent .container-fluid .container h3 {
+        padding: 15px 0px;
+        text-align: left; }
+      #myTabContent .container-fluid .container p {
+        font-family: "Lato", sans-serif;
+        font-size: 1.1rem;
+        text-align: left; }
+      #myTabContent .container-fluid .container ol {
+        text-align: left; }
+        #myTabContent .container-fluid .container ol li {
+          margin-bottom: 10px;
+          padding-left: 10px;
+          font-family: "Raleway", sans-serif;
+          font-weight: bold; }
 
 #SocialMedia {
   height: 300px;
