@@ -12,11 +12,18 @@ $raleway: 'Raleway', sans-serif;
 $gold: #d89e04;
 
 #Nav {
+  background: rgba(0, 0, 0, 0.5);
   transition: all 1s;
+  .custom-toggler.navbar-toggler {
+    border-color: lightgray;
+  }
+  .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(211, 211, 211, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
   .navbar-nav {
     padding: 15px 0px;
+
     .nav-item {
-      margin: 5px;
       .nav-link {
         color: #dadada;
         font-family: $lato;
@@ -24,6 +31,8 @@ $gold: #d89e04;
         position: relative;
         text-decoration: none;
         transition: all 0.2s ease-in-out;
+        display: inline-block;
+        margin: 5px;
 
         &:hover {
           color: #fff;
@@ -67,9 +76,14 @@ $gold: #d89e04;
       border: 1px solid black;
       border-radius: 20px;
       font-family: $lato;
-      font-size: 1.2rem;
+      font-size: 1rem;
       position: relative;
       padding: 10px 10px;
+      margin-left: auto;
+      display: inline-block;
+      @include mediaSm {
+        margin-top: 10px;
+      }
 
       &:hover {
         background: #fff;
@@ -80,7 +94,13 @@ $gold: #d89e04;
   }
 }
 .light {
-  background: white;
+  background: white !important;
+  .custom-toggler.navbar-toggler {
+    border-color: #333 !important;
+  }
+  .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(51, 51, 51, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+  }
   .navbar-nav {
     .nav-item {
       .nav-link {
@@ -299,6 +319,178 @@ $gold: #d89e04;
       font-size: 1.2rem;
     }
   }
+
+  // Mixins and Placeholders
+  %clearfix {
+    &:after,
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      clear: both;
+    }
+  }
+
+  @mixin prefix($prop, $val) {
+    @each $prefix in '-webkit-', '-moz-', '-ms-', '' {
+      #{$prefix}#{$prop}: $val;
+    }
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  // Timeline
+  #timeline {
+    width: 100%;
+    margin: 30px auto;
+    position: relative;
+    padding: 0 10px;
+    @include prefix(transition, all 0.4s ease);
+
+    &:before {
+      content: '';
+      width: 3px;
+      height: 100%;
+      background: $gold;
+      left: 50%;
+      top: 0;
+      position: absolute;
+    }
+
+    &:after {
+      content: '';
+      clear: both;
+      display: table;
+      width: 100%;
+    }
+
+    .timeline-item {
+      margin-bottom: 50px;
+      position: relative;
+      @extend %clearfix;
+
+      .timeline-icon {
+        background: $gold;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        overflow: hidden;
+        margin-left: -23px;
+        @include prefix(border-radius, 50%);
+        i {
+          color: white;
+          font-size: 22px;
+        }
+      }
+
+      .timeline-content {
+        width: 45%;
+        background: #fff;
+        padding: 20px;
+        @include prefix(box-shadow, 0 3px 0 rgba(0, 0, 0, 0.1));
+        @include prefix(border-radius, 5px);
+        @include prefix(transition, all 0.3s ease);
+
+        h2 {
+          padding: 15px;
+          background: $gold;
+          color: #fff;
+          margin: -20px -20px 0 -20px;
+          font-weight: 300;
+          @include prefix(border-radius, 3px 3px 0 0);
+        }
+        p {
+          margin: 30px 0px;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 45%;
+          top: 20px;
+          width: 0;
+          height: 0;
+          border-top: 7px solid transparent;
+          border-bottom: 7px solid transparent;
+          border-left: 7px solid $gold;
+        }
+
+        &.right {
+          float: right;
+
+          &:before {
+            content: '';
+            right: 45%;
+            left: inherit;
+            border-left: 0;
+            border-right: 7px solid $gold;
+          }
+        }
+      }
+    }
+  }
+
+  // Buttons
+  .btn {
+    padding: 5px 15px;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid lighten(black, 10%);
+    color: lighten(black, 10%);
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 20px;
+    @include prefix(border-radius, 5px);
+    @include prefix(transition, background 0.3s ease);
+    @include prefix(box-shadow, 2px 2px 0 lighten(black, 10%));
+
+    &:hover {
+      box-shadow: none;
+      top: 2px;
+      left: 2px;
+      @include prefix(box-shadow, 2px 2px 0 transparent);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #timeline {
+      margin: 30px;
+      padding: 0px;
+      width: 90%;
+      &:before {
+        left: 0;
+      }
+
+      .timeline-item {
+        .timeline-content {
+          width: 90%;
+          float: right;
+
+          &:before,
+          &.right:before {
+            left: 10%;
+            margin-left: -6px;
+            border-left: 0;
+            border-right: 7px solid $gold;
+          }
+        }
+
+        .timeline-icon {
+          left: 0;
+        }
+      }
+    }
+  }
   .container {
     padding: 0px;
     margin-top: 120px;
@@ -314,6 +506,7 @@ $gold: #d89e04;
       max-width: 500px;
       margin-bottom: 0px;
     }
+
     @include mediaSm {
       h1 {
         font-size: 1.3rem;
@@ -327,8 +520,9 @@ $gold: #d89e04;
       background: white;
       overflow: visible;
       width: 100%;
-      top: 85px;
+      top: 90px;
       left: 0;
+      padding-bottom: 15px;
       z-index: 200;
       .nav-item {
         .nav-link {
@@ -377,7 +571,7 @@ $gold: #d89e04;
         }
       }
       @include mediaSm {
-        top: 80px;
+        top: 75px;
       }
     }
   }
@@ -387,7 +581,7 @@ $gold: #d89e04;
   .container-fluid {
     padding: 0;
     .showtron {
-      height: 400px;
+      height: 600px;
 
       background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url(../img/360.jpg);
@@ -399,17 +593,27 @@ $gold: #d89e04;
       justify-content: center;
       align-items: center;
       font-family: $ubuntu;
+      @include mediaSm {
+        height: 90vh;
+        text-align: center;
+      }
       h1 {
         color: white;
         text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
           0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
         font-size: 3rem;
+        @include mediaSm {
+          font-size: 2.5rem;
+        }
       }
       h2 {
         color: white;
         text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
           0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
         font-size: 2.5rem;
+        @include mediaSm {
+          font-size: 2rem;
+        }
       }
     }
     .advisor {
@@ -417,30 +621,67 @@ $gold: #d89e04;
         url(../img/bike.jpg);
       background-position: bottom center;
     }
-
+    .process {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../img/process.jpg);
+      background-position: bottom center;
+    }
     .container {
       margin-top: 0px !important;
       h1 {
         text-align: center;
         padding: 20px 10px;
+        margin: 20px 0px;
       }
       h3 {
-        padding: 15px 0px;
+        padding: 15px 10px;
         text-align: left;
       }
       p {
         font-family: $lato;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         text-align: left;
+        margin-bottom: 50px;
+        padding: 0px 15px;
       }
       ol {
         text-align: left;
+        margin-bottom: 40px;
         li {
           margin-bottom: 10px;
 
-          padding-left: 10px;
+          padding: 0px 10px;
           font-family: $raleway;
           font-weight: bold;
+        }
+      }
+
+      .row {
+        margin-bottom: 50px;
+        .col-md-6 {
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          img {
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 50%;
+            border: 2px solid #a67903;
+            transition: all 1s ease-in-out;
+          }
+          h1 {
+            padding-bottom: 0;
+            font-family: $lato;
+          }
+          h2 {
+            color: darken($gold, $amount: 10);
+          }
+          a {
+            text-decoration: none;
+            font-size: 1.5rem;
+          }
         }
       }
     }

@@ -38,8 +38,6 @@ class About extends React.Component {
     return (
       <div id="About">
         <div className="container">
-          <img src={Armis} alt="" />
-
           <ul className="nav justify-content-center " id="myTab" role="tablist">
             <li className="nav-item">
               <a

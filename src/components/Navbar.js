@@ -72,7 +72,17 @@ class NavBar extends React.Component {
               onClick={this.handleSubmit}
             />
           </a>
-
+          <button
+            className="navbar-toggler custom-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#NavBar"
+            aria-controls="NavBar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon text-dark"></span>
+          </button>
           <div
             className="collapse navbar-collapse justify-content-md-center"
             id="NavBar"
@@ -133,9 +143,21 @@ class NavBar extends React.Component {
                   Contact
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink
+                  id="ClientLoginBtn"
+                  className="nav-link"
+                  activeClassName="active"
+                  to="/client-login"
+                  exact
+                  onClick={this.handleSubmit}
+                >
+                  <i className="fas fa-user-lock"></i> Client Login
+                </NavLink>
+              </li>
             </ul>
           </div>
-          <ul className="navbar-nav">
+          {/* <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink
                 id="ClientLoginBtn"
@@ -147,7 +169,7 @@ class NavBar extends React.Component {
                 <i className="fas fa-user-lock"></i> Client Login
               </NavLink>
             </li>
-          </ul>
+          </ul> */}
         </nav>
       </div>
     );

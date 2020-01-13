@@ -1,4 +1,5 @@
 import React from 'react';
+import Armis from '../img/armis3.png';
 
 class Firm extends React.Component {
   render() {
@@ -9,7 +10,7 @@ class Firm extends React.Component {
           <h2>From The Capitol City</h2>
         </div>
         <div className="container">
-          <h1>The Firm</h1>
+          <img src={Armis} alt="" />
           <p>
             Armis Financial was founded due to the lack of transparency and
             value that the financial service industry currently provides to
